@@ -4,11 +4,14 @@
   "description": "",
   "repository": {
     "type": "git",
-    "ulr": ""
+    "ulr": "https://github.com/bizhermit/clone-cli-app.git"
   },
-  "bugs": "",
-  "author": "",
-  "contributors": [],
+  "bugs": "https://github.com/bizhermit/clone-cli-app/issues",
+  "author": "bizhermit.com <support@bizhermit.com> (https://bizhermit.com)",
+  "homepage": "https://bizhermit.com",
+  "contributors": [
+    "Ryoichi Senda <rsenda@bizhermit.com> (https://bizhermit.com)"
+  ],
   "license": "MIT",
   "private": true,
   "main": "bin/cli.js",
