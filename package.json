@@ -1,17 +1,14 @@
 {
   "name": "clone-cli-app",
   "version": "0.0.0",
-  "description": "",
+  "description": "clone base: cli app",
   "repository": {
     "type": "git",
     "ulr": "https://github.com/bizhermit/clone-cli-app.git"
   },
   "bugs": "https://github.com/bizhermit/clone-cli-app/issues",
-  "author": "bizhermit.com <support@bizhermit.com> (https://bizhermit.com)",
+  "author": "Ryoichi Senda (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",
-  "contributors": [
-    "Ryoichi Senda <rsenda@bizhermit.com> (https://bizhermit.com)"
-  ],
   "license": "MIT",
   "private": true,
   "main": "bin/cli.js",
@@ -21,7 +18,7 @@
   ],
   "scripts": {
     "dev": "npx tsc -w -p src",
-    "build": "npx rimraf bin && npx tsc -p src && npx license-checker --production > LICENSE",
+    "build": "npx rimraf bin && npx tsc -p src && npx license-checker --production > AUTHORS",
     "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js"
   },
   "devDependencies": {
