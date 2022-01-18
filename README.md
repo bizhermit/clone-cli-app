@@ -5,6 +5,12 @@
 VSCodeのビルドタスクの利用も可（そちらを推奨）
 
 ```bash
+> npm run watch
+```
+
+## 実行（確認）
+
+```bash
 > npm run dev
 ```
 
