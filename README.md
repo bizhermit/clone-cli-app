@@ -17,11 +17,11 @@ VSCodeのビルドタスクの利用も可（そちらを推奨）
 ## ビルド
 
 ```bash
-> npm run build
+> npm run build:js
 ```
 
 ## 実行ファイル作成
 
 ```bash
-> npm run pack
+> npm run build
 ```
