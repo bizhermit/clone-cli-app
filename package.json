@@ -11,22 +11,26 @@
   "homepage": "https://bizhermit.com",
   "license": "MIT",
   "private": true,
-  "main": "bin/cli.js",
+  "main": "bin/index",
   "bin": "bin/cli.js",
   "files": [
-    "bin"
+    "bin",
+    "CREDIT"
   ],
   "scripts": {
-    "watch": "npx tsc -w -p src",
-    "dev": "node .",
-    "build:js": "npx rimraf bin build && npx tsc -p src && npx minifier bin && npx license-checker --production > AUTHORS",
-    "build:win": "npm run build:js && npx pkg --out-path build --targets win --compress GZip bin/cli.js",
-    "build:mac": "npm run build:js && npx pkg --out-path build --targets mac --compress GZip bin/cli.js",
-    "build:linux": "npm run build:js && npx pkg --out-path build --targets linux --compress GZip bin/cli.js",
-    "build": "npm run build:js && npx pkg --out-path build --compress GZip bin/cli.js"
+    "dev": "node bin/cli",
+    "license": "npx rimraf CREDIT && npx license -o CREDIT --returnError -exclude readline",
+    "build": "npm run license && npx rimraf bin && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && npx minifier bin",
+    "pack": "npm run build && npx pkg --out-path build --compress GZip bin/cli.js",
+    "pack:win": "npm run pack -- --targets win",
+    "pack:mac": "npm run pack --targets mac",
+    "pack:linux": "npm run pack --targets linux",
+    "prepare": "npm run build && git add -A && git diff --quiet --exit-code --cached || git commit -m \"build v%npm_package_version%\" && git push origin",
+    "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
   "devDependencies": {
-    "@bizhermit/minifier": "^1.0.0",
+    "@bizhermit/license": "^1.0.9",
+    "@bizhermit/minifier": "^1.0.4",
     "@types/node": "^17.0.9",
     "license-checker": "^25.0.1",
     "pkg": "^5.5.2",
@@ -34,6 +38,6 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@bizhermit/basic-utils": "^1.0.1"
+    "@bizhermit/basic-utils": "^1.1.0"
   }
 }
