@@ -2,11 +2,7 @@
 
 ## tsファイル監視
 
-VSCodeのビルドタスクの利用も可（そちらを推奨）
-
-```bash
-> npm run watch
-```
+VSCodeのビルドタスクの利用
 
 ## 実行（確認）
 
@@ -17,11 +13,11 @@ VSCodeのビルドタスクの利用も可（そちらを推奨）
 ## ビルド
 
 ```bash
-> npm run build:js
+> npm run build
 ```
 
 ## 実行ファイル作成
 
 ```bash
-> npm run build
+> npm run pack
 ```
